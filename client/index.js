@@ -2,6 +2,7 @@ import Web3 from "web3";
 import 'bootstrap/dist/css/bootstrap.css'
 import configuration from '../build/contracts/BookingContract.json'
 
+
 (new URL(window.location.href)).searchParams.forEach((x, y) =>
     document.getElementById(y).value = x);
 
