@@ -2,6 +2,9 @@ import Web3 from "web3";
 import 'bootstrap/dist/css/bootstrap.css'
 import configuration from '../build/contracts/BookingContract.json'
 
+(new URL(window.location.href)).searchParams.forEach((x, y) =>
+    document.getElementById(y).value = x);
+
 const CONTRACT_ADDRESS = configuration.networks['3'].address;
 const CONTRACT_ABI = configuration.abi;
 const address = '0xA6B2C8940e5D351c2dcbB031508934D8f51CD8c7'
