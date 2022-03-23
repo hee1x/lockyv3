@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "build:parcel": "parcel build index.html",
+    "build": "npm run clean && npm run build:parcel",
+    "clean": "rm -rf dist/*"
   },
   "keywords": [],
   "author": "",
