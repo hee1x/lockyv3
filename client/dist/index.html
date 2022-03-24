@@ -18,7 +18,7 @@
       <form id="details">
         <div class="form-group">
             <label for="transactionID">Transaction Num</label>
-            <input type="text" class="form-control" id="transactionID">
+            <input type="text" class="form-control" id="transactionID" readonly="">
         </div>
         <div class="form-group">
             <label for="receiver">Receiver</label>
@@ -32,8 +32,10 @@
             <label for="booker">Booker</label>
             <input type="text" class="form-control" id="booker">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">send to blockchain</button>
       </form>
+
+        <a href="https://ropsten.etherscan.io/address/0x1febc1444218225dd7e1c6c24c6080e35c6f6970">View the contract</a>
       <p id="things"></p>
 </body>
 </html>

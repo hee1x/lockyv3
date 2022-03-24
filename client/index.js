@@ -2,6 +2,7 @@ import Web3 from "web3";
 import 'bootstrap/dist/css/bootstrap.css'
 import configuration from '../build/contracts/BookingContract.json'
 
+
 (new URL(window.location.href)).searchParams.forEach((x, y) =>
     document.getElementById(y).value = x);
 
@@ -11,6 +12,12 @@ const address = '0xA6B2C8940e5D351c2dcbB031508934D8f51CD8c7'
 const privateKey = '3c9b9c4eb238971abfc625dca986840d44eaa40681627141e208ccf2dba8a9df'
 const infuraUrl = 'https://ropsten.infura.io/v3/4dedbeba7f894e588f573103e855ed36'
 
+const web3 = new Web3(infuraUrl);
+    const myContract = new web3.eth.Contract(
+        CONTRACT_ABI,
+        CONTRACT_ADDRESS
+    );
+myContract.methods.bookingCount().call().then(function(result){document.getElementById('transactionID').value = parseInt(result)+1})
 // const web3 = new Web3(
 //     'https://ropsten.infura.io/v3/4dedbeba7f894e588f573103e855ed36'
 // );
@@ -116,16 +123,12 @@ const init1 = async () => {
 }
 
 const init2 = async() => {
+
     const transactionNo = document.getElementById("transactionID").value
     const receiver = document.getElementById("receiver").value
     const locker = document.getElementById("lockerID").value
     const booker = document.getElementById("booker").value
 
-    const web3 = new Web3(infuraUrl);
-    const myContract = new web3.eth.Contract(
-        CONTRACT_ABI,
-        CONTRACT_ADDRESS
-    );
     web3.eth.accounts.wallet.add(privateKey);
     const tx = myContract.methods.registerNewBooking(transactionNo, receiver, locker, booker);
     const gas = await tx.estimateGas({from: address});
