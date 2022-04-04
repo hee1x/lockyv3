@@ -1,6 +1,7 @@
 import Web3 from "web3";
 import 'bootstrap/dist/css/bootstrap.css'
 import configuration from '../build/contracts/BookingContract.json'
+import data from '../data.json'
 
 
 (new URL(window.location.href)).searchParams.forEach((x, y) =>
@@ -8,8 +9,8 @@ import configuration from '../build/contracts/BookingContract.json'
 
 const CONTRACT_ADDRESS = configuration.networks['3'].address;
 const CONTRACT_ABI = configuration.abi;
-const address = '0xA6B2C8940e5D351c2dcbB031508934D8f51CD8c7'
-const privateKey = '3c9b9c4eb238971abfc625dca986840d44eaa40681627141e208ccf2dba8a9df'
+const address = data.address
+const privateKey = data.PrivKey
 const infuraUrl = 'https://ropsten.infura.io/v3/4dedbeba7f894e588f573103e855ed36'
 
 const web3 = new Web3(infuraUrl);
