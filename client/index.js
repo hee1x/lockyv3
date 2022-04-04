@@ -136,6 +136,7 @@ const init2 = async() => {
     const gasPrice = await web3.eth.getGasPrice();
     const data = tx.encodeABI();
     const nonce = await web3.eth.getTransactionCount(address);
+    console.log(`gas: ${gas}, gasprice: ${gasPrice}`)
     const txData = {
         from: address,
         to: CONTRACT_ADDRESS,

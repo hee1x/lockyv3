@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collect</title>
+    <link rel="stylesheet" href="/index.3a01df49.css">
+</head>
+<body>
+    <script src="/collect.af92aafa.js" defer=""></script>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Collect</a>
+        
+      </nav>
+
+      <form id="collect">
+        <div class="form-group">
+            <label for="transactionID">Transaction Num</label>
+            <input type="text" class="form-control" id="transactionID" readonly="">
+        </div>
+        <div class="form-group">
+            <label for="receiver">Receiver</label>
+            <input type="text" class="form-control" id="receiver">
+        </div>
+        <div class="form-group">
+            <label for="lockerID">Locker</label>
+            <input type="text" class="form-control" id="lockerID">
+        </div>
+        <div class="form-group">
+            <label for="booker">Booker</label>
+            <input type="text" class="form-control" id="booker">
+        </div>
+        <button type="submit" class="btn btn-primary">send to blockchain</button>
+      </form>
+
+        <a href="https://ropsten.etherscan.io/address/0x1febc1444218225dd7e1c6c24c6080e35c6f6970">View the contract</a>
+      <p id="things"></p>
+</body>
+</html>
