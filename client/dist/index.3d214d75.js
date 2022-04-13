@@ -661,7 +661,10 @@ const init2 = async ()=>{
     console.log(`old count ${await myContract.methods.bookingCount().call()}`);
     const receipt = await web3.eth.sendTransaction(txData);
     console.log(`Transaction hash: ${receipt.transactionHash}`);
-    console.log(`new count ${await myContract.methods.bookingCount().call()}`);
+    const count = await myContract.methods.bookingCount().call();
+    console.log(`new count ${count}`);
+    const booking = await myContract.methods.bookingList(count).call();
+    console.log(`docNo: ${booking.bookingNo}\n receiver: ${booking.receiver} \n locker: ${booking.locker} \n booker: ${booking.booker} \n Collected: ${booking.collected}`);
 };
 
 },{"web3":"1uwsC","bootstrap/dist/css/bootstrap.css":"jJvnD","../build/contracts/BookingContract.json":"afEvZ","../data.json":"gVXLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1uwsC":[function(require,module,exports) {

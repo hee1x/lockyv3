@@ -556,7 +556,7 @@ myContract.methods.bookingCount().call().then(function(result) {
 // console.log(CONTRACT_ADDRESS)
 // contract.defaultAccount = '0xA6B2C8940e5D351c2dcbB031508934D8f51CD8c7'
 // web3.eth.accounts.privateKeyToAccount('3c9b9c4eb238971abfc625dca986840d44eaa40681627141e208ccf2dba8a9df')
-const form = document.forms['details'];
+const form = document.forms['collect'];
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     //     const transactionNo = document.getElementById("transactionID").value
